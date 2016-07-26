@@ -10,7 +10,6 @@
 #include "DetectorConstruction.hh"
 #include "PhysicsList.hh"
 #include "ActionInitialization.hh"
-#include <string>
 
 #include "Randomize.hh"
 
@@ -19,23 +18,6 @@ int main(int argc, char** argv){
 	G4UIExecutive *ui = 0;
 	if(argc == 1){
 		ui = new G4UIExecutive(argc, argv);
-	}
-
-	// std::string cadFileName = ""
-
-    DetectorConstruction* detectorConstruction = new DetectorConstruction;
-
-	if(argc == 3){
-		if(strcmp(argv[1],"-cad")==0){
-			detectorConstruction->SetCADFileName(argv[2]);
-		}
-		ui = new G4UIExecutive(argc, argv);
-	}
-
-	if(argc == 4){
-		if(strcmp(argv[2],"-cad")==0){
-			detectorConstruction->SetCADFileName(argv[3]);
-		}
 	}
 
 	G4Random::setTheEngine(new CLHEP::RanecuEngine);
@@ -47,7 +29,7 @@ int main(int argc, char** argv){
 		G4RunManager* runManager = new G4RunManager;
 	#endif
 
-	runManager->SetUserInitialization(detectorConstruction);
+	runManager->SetUserInitialization(new DetectorConstruction);
 	runManager->SetUserInitialization(new PhysicsList);
 	runManager->SetUserInitialization(new ActionInitialization);
 

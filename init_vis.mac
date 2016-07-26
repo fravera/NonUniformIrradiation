@@ -23,10 +23,8 @@
 #
 /gps/pos/shape Rectangle
 /gps/pos/centre 0. 0. -8. cm
-#/gps/pos/halfx 10. cm
-/gps/pos/halfx 1.5 cm
-#/gps/pos/halfy 10. cm
-/gps/pos/halfy 1.5 cm
+/gps/pos/halfx 10. cm
+/gps/pos/halfy 10. cm
 #
 #/gps/ang/type focused
 #/gps/ang/focuspoint 10 -5 0 cm

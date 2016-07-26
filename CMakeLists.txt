@@ -16,7 +16,6 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 
 add_executable(NonUniformIrradiation NonUniformIrradiation.cc ${sources} ${headers})
 target_link_libraries(NonUniformIrradiation ${Geant4_LIBRARIES})
-target_link_libraries(NonUniformIrradiation cadmesh)
 
 set(EXAMPLEB1_SCRIPTS
   init_vis.mac
