@@ -22,6 +22,7 @@ set(EXAMPLEB1_SCRIPTS
   init_vis.mac
   vis.mac
   data/SpectrumLegnaroW.dat
+  data/*stl
   run1.mac
 )
 
