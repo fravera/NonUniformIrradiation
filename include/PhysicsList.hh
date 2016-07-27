@@ -18,6 +18,9 @@ class PhysicsList : public G4VModularPhysicsList{
 
 		void SetCuts();
 
+	private:
+		G4VPhysicsConstructor *fEmPhysicsList;
+
 };
 
 #endif

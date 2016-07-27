@@ -24,6 +24,9 @@
 #include "G4Electron.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4Positron.hh"
+#include "G4Proton.hh"
+#include "G4VPhysicsConstructor.hh"
+#include "G4EmStandardPhysics_option4.hh"
 
 #include "G4LossTableManager.hh"
 #include "G4EmProcessOptions.hh"
@@ -37,6 +40,7 @@ PhysicsList::PhysicsList() : G4VModularPhysicsList(){
 
 	G4LossTableManager::Instance();
 	SetVerboseLevel(1);
+	fEmPhysicsList = new G4EmStandardPhysics_option4();
 	// SetPhysicsType(bElectromagnetic);
 
 }
@@ -51,9 +55,11 @@ PhysicsList::~PhysicsList(){
 
 void PhysicsList::ConstructParticle(){
 
-	G4Gamma::GammaDefinition();
-	G4Electron::ElectronDefinition();
-	G4Positron::PositronDefinition();
+	// G4Gamma::GammaDefinition();
+	// G4Electron::ElectronDefinition();
+	// G4Positron::PositronDefinition();
+	// G4Proton::ProtonDefinition();
+	fEmPhysicsList->ConstructParticle();
 
 }
 
@@ -66,7 +72,7 @@ void PhysicsList::ConstructProcess(){
 	// emPhysicsList->ConstructProcess(); 
 
 	AddTransportation();
-
+	fEmPhysicsList->ConstructProcess();
 
 	G4RayleighScattering* theRayleighScattering = new G4RayleighScattering();
 	theRayleighScattering->SetEmModel(new G4PenelopeRayleighModel());
@@ -147,11 +153,12 @@ void PhysicsList::SetCuts(){
 
 	G4ProductionCutsTable::GetProductionCutsTable()->SetEnergyRange(100*eV,100*keV);
 
-	SetCutValue(0.01*um, "gamma");
-	SetCutValue(0.01*um, "e-");
+	SetCutValue(1*um, "gamma");
+	SetCutValue(1*um, "e-");
 	// SetCutValue(1*um, "e-");
-	SetCutValue(0.01*um, "e+");
+	SetCutValue(1*um, "e+");
 	// SetCutValue(1*um, "e+");
+	SetCutValue(1*um,"proton");
 	DumpCutValuesTable();
 
 }

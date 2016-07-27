@@ -13,8 +13,9 @@
 /run/initialize
 #
 /gps/verbose 0
-#/gps/particle gamma
-/gps/particle e-
+/gps/particle gamma
+#/gps/particle e-
+#/gps/particle proton
 #
 /gps/direction 0 0 1
 /gps/pos/type Plane
@@ -23,28 +24,28 @@
 #
 /gps/pos/shape Rectangle
 /gps/pos/centre 0. 0. -8. cm
-/gps/pos/halfx 10. cm
-/gps/pos/halfy 10. cm
+/gps/pos/halfx 2. cm
+/gps/pos/halfy 2. cm
 #
 #/gps/ang/type focused
 #/gps/ang/focuspoint 10 -5 0 cm
 #
 #/gps/ene/type User
 #/gps/hist/file data/SpectrumLegnaroW.dat
-#/gps/ene/type Arb 
-#/gps/hist/type arb
-#/gps/hist/file data/SpectrumLegnaroW.dat
-#/gps/hist/inter Lin
-/gps/energy 10 MeV
+/gps/ene/type Arb 
+/gps/hist/type arb
+/gps/hist/file data/SpectrumLegnaroW.dat
+/gps/hist/inter Lin
+#/gps/energy 23.6 MeV
 #
 /analysis/setFileName simulation
 /analysis/h1/set  1 500 0 50 keV
 /analysis/h1/set  2 100 0 20 mm
 /analysis/h1/set  3 100 0 20 mm
-/analysis/h2/setX 1 100 -100 100 mm
-/analysis/h2/setY 1 100 -100 100 mm
-/analysis/h2/setX 2 100 -100 100 mm
-/analysis/h2/setY 2 100 -100 100 mm
+/analysis/h2/setX 1 100 -20 20 mm
+/analysis/h2/setY 1 100 -20 20 mm
+/analysis/h2/setX 2 100 -20 20 mm
+/analysis/h2/setY 2 100 -20 20 mm
 #
 # Visualization setting
 /process/eLoss/StepFunction 0.1 10 um
