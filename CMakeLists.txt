@@ -22,7 +22,8 @@ set(EXAMPLEB1_SCRIPTS
   init_vis.mac
   vis.mac
   data/SpectrumLegnaroW.dat
-  data/*stl
+  data/FilterThickness_DetectorThickness100um_min0.1.stl 
+  data/FilterThickness_DetectorThickness100um_min0.5.stl
   run1.mac
 )
 
