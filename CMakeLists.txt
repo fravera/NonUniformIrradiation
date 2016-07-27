@@ -24,6 +24,7 @@ set(EXAMPLEB1_SCRIPTS
   data/SpectrumLegnaroW.dat
   data/FilterThickness_DetectorThickness100um_min0.1.stl 
   data/FilterThickness_DetectorThickness100um_min0.5.stl
+  data/FilterThickness_DetectorThickness100um_min0.stl
   run1.mac
 )
 
