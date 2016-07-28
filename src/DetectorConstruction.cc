@@ -87,6 +87,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
 
 	G4double detectorX = 20*cm,  detectorY = 20*cm, detectorZ = 100*um;
 	G4Material* detectorMaterial = nist->FindOrBuildMaterial("G4_SILICON_DIOXIDE");
+	// G4cout<<detectorMaterial->GetDensity()<<G4endl;
 
 	G4Box *detectorSolid = new G4Box("Detector", detectorX*0.5, detectorY*0.5, detectorZ*0.5);
 	G4LogicalVolume *detectorLogic = new G4LogicalVolume(detectorSolid,detectorMaterial,"Detector");
